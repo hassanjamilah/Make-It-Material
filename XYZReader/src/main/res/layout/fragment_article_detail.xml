@@ -1,0 +1,120 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/draw_insets_frame_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="168dp"
+        android:elevation="4dp"
+        android:layout_marginTop="24dp"
+
+        >
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:collapsedTitleTextAppearance="@style/CollapsedAppBar"
+            app:contentScrim="@color/gree_500"
+            app:expandedTitleMargin="16dp"
+            app:expandedTitleMarginStart="56dp"
+            app:expandedTitleTextAppearance="@style/expandedAppBar"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="@string/make_it_material">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/details_tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:elevation="4dp"
+                app:layout_collapseMode="pin"
+                app:titleMarginStart="56dp"
+               >
+            </android.support.v7.widget.Toolbar>
+
+            <ImageView
+                android:id="@+id/details_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_logo002" />
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/article_title"
+                style="?android:attr/textAppearanceLarge"
+                android:paddingLeft="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
+                android:fontFamily="sans-serif-black"
+                android:background="@android:color/black"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:textSize="@dimen/detail_title_text_size"
+                android:lineSpacingMultiplier="0.9"
+
+
+                />
+            <TextView
+                android:id="@+id/article_byline"
+                style="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+              />
+
+            <TextView
+                android:id="@+id/article_body"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
+                android:layout_marginRight="@dimen/detail_inner_horiz_margin"
+                android:paddingBottom="@dimen/detail_body_bottom_margin"
+               android:padding="8dp"
+                android:textColorLink="@color/theme_accent"
+                android:textSize="@dimen/detail_body_text_size"
+                android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/share_fab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:background="@drawable/add_fab_background"
+        android:contentDescription="@string/action_share"
+        android:elevation="@dimen/fab_elevation"
+        android:backgroundTint="@color/theme_accent"
+        android:src="@drawable/ic_share_black_24dp"
+        android:stateListAnimator="@anim/fab_state_list_anim" />
+
+</android.support.design.widget.CoordinatorLayout>
